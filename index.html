@@ -30,7 +30,7 @@
         <div class="card">
           <p>First 2 toppings free, each extra topping $2:</p>
           <div class="checkboxes">
-            <div class="">
+            <fieldset class="">
               <label><input type="checkbox" name="topping" value="pepperoni"> Pepperoni</label>
               <label><input type="checkbox" name="topping" value="pineapple"> Pineapple</label>
               <label><input type="checkbox" name="topping" value="sausage"> Sausage</label>
@@ -43,7 +43,7 @@
               <label><input type="checkbox" name="topping" value="bacon"> Bacon</label>
               <label><input type="checkbox" name="topping" value="tomatoes"> Tomatoes</label>
               <label><input type="checkbox" name="topping" value="jalapenos"> Jalapenos</label>
-            </div>
+            </fieldset>
           </div>
         </div>
         <button type="submit" class="btn btn-success">Add to Order</button>
@@ -53,16 +53,14 @@
     <div class="card">
       <h2>Pizzas:</h2>
     </div>
-    <div class="card">
+    <div class="card" id="pizza-list">
       <ul id="pizzas">
       </ul>
     </div>
-    <div class="card">
-      <div id="show-pizza">
-        <p>Pizza Size: <span class="pizza-size"></span></p>
-        <p>Pizza Toppings: <span class="pizza-toppings"></span></p>
-        <div id="buttons">
-        </div>
+    <div class="card" id="show-pizza">
+      <p>Pizza Size: <span class="pizza-size"></span></p>
+      <p>Pizza Toppings: <span class="pizza-toppings"></span></p>
+      <div id="buttons">
       </div>
     </div>
     <div class="card">

@@ -4,6 +4,7 @@ h1 {
 
 body {
   background-color: yellow;
+  font-size: 24px;
 }
 
 .jumbotron {
@@ -21,18 +22,10 @@ body {
   float: left;
 }
 
-.checkboxes input{
-  margin: 0px 0px 0px 0px;
-}
-
 .checkboxes label{
-  margin: 0px 20px 0px 3px;
+  margin: 10px 20px 10px 3px;
 }
 
-#show-pizza {
-  display: none;
-}
-
-#recipt {
+#show-pizza, #pizza-list, #recipt{
   display: none;
 }

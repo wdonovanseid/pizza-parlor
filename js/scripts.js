@@ -99,11 +99,11 @@ function displayPizzaDetails(orderToDisplay) {
 function showPizza(pizzaId) {
   const pizza = customerOrder.findPizza(pizzaId);
   let htmlForPizzaToppings = "";
-  $("#show-pizza").show();
+  $("#show-pizza").toggle();
   $(".pizza-size").html(pizza.size);
   pizza.toppings.forEach(function(topping) {
     htmlForPizzaToppings += topping + ", ";
-  })
+  });
   $(".pizza-toppings").html(htmlForPizzaToppings);
   let buttons = $("#buttons");
   buttons.empty();
@@ -123,7 +123,7 @@ function attachPizzaListeners() {
   });
   $("#checkout").on("click", function() {
     $("#recipt").show();
-  })
+  });
 }
 
 // USER INTERFACE //
@@ -147,6 +147,7 @@ $(document).ready(function() {
     
     $("#name").text(userName);
     $(".order-total").text(orderTotal);
+    $("#pizza-list").show()
     displayPizzaDetails(customerOrder);
   });
 });
