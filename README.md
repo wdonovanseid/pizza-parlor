@@ -24,7 +24,7 @@ Output: Total Cost is $24.99
 
 ## Gh-pages Link
 
-
+* https://wdonovanseid.github.io/pizza-parlor/
 
 ## Setup/Installation Requirements
 
