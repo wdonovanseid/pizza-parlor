@@ -37,14 +37,12 @@
               <label><input type="checkbox" name="topping" value="olives"> Olives</label>
               <label><input type="checkbox" name="topping" value="anchovy"> Anchovy</label>
               <label><input type="checkbox" name="topping" value="x-cheese"> Extra Cheese</label>
-            </div>
-            <div class="">
-              <label><input type="checkbox" name="topping" value=""></label>
-              <label><input type="checkbox" name="topping" value=""></label>
-              <label><input type="checkbox" name="topping" value=""></label>
-              <label><input type="checkbox" name="topping" value=""></label>
-              <label><input type="checkbox" name="topping" value=""></label>
-              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value="mushrooms"> Mushrooms</label>
+              <label><input type="checkbox" name="topping" value="onions"> Onions</label>
+              <label><input type="checkbox" name="topping" value="bell-peppers"> Bell Peppers</label>
+              <label><input type="checkbox" name="topping" value="bacon"> Bacon</label>
+              <label><input type="checkbox" name="topping" value="tomatoes"> Tomatoes</label>
+              <label><input type="checkbox" name="topping" value="jalapenos"> Jalapenos</label>
             </div>
           </div>
         </div>
@@ -52,23 +50,25 @@
       </div>
     </form>
     <hr>
-    <h2>Pizzas:</h2>
-    <ul id="pizzas">
-    </ul>
     <div class="card">
+      <h2>Pizzas:</h2>
+    </div>
+    <div class="card">
+      <ul id="pizzas">
+      </ul>
       <div id="show-pizza">
         <p>Pizza Size: <span class="pizza-size"></span></p>
         <p>Pizza Toppings: <span class="pizza-toppings"></span></p>
         <div id="buttons">
         </div>
       </div>
+      <div class="card"></div>
       <p>Total Cost: $<span class="order-total"></span></p>
     </div>
-    <button type="button" class="btn btn-danger" id="checkout">Proceed to Checkout</button>
-    <div class="card">
-      <div id="recipt">
-        <p><span id="name"></span>, your orders total cost is $<span class="order-total"></span></p>
-      </div>
+    <button type="button" class="btn btn-success" id="checkout">Proceed to Checkout</button>
+    <hr>
+    <div class="card" id="recipt">
+      <p><span id="name"></span>, your orders total cost is $<span class="order-total"></span></p>
     </div>
   </div>
 </body>

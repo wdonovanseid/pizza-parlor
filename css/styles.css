@@ -1,6 +1,20 @@
-form#pizza-order {
-  display: block;
-  margin-bottom: 5px;
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: yellow;
+}
+
+.jumbotron {
+  background-color: orange;
+}
+
+.card {
+  background-color: red;
+  color: white;
+  padding: 14px;
+  margin: 20px;
 }
 
 .checkboxes {
