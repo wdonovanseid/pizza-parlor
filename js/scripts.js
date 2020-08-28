@@ -2,21 +2,13 @@
 // Pizza Stuff
 
 function Pizza() {
-  this.size = "test";
+  this.size;
   this.toppings = [];
   this.totalPrice = 0;
 }
 
 Pizza.prototype.addSize = function(size) {
-  let temp = this.size;
-  console.log(temp)
-  console.log(size)
-  console.log(this.size)
-  temp.replace("test", size);
-  console.log(temp)
-  console.log(size)
-  console.log(this.size)
-  this.size = temp;
+  this.size = size;
 }
 
 Pizza.prototype.addToppings = function() {
