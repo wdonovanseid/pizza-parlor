@@ -148,11 +148,29 @@ $(document).ready(function() {
     thePizza.addToppings();
     customerOrder.addPizza(thePizza);
 
-    $("select#ordered-size").val("small");
+    $("select#ordered-size").val("medium");
     $("input:checkbox").prop("checked", false);
 
     let orderTotal = customerOrder.totalPrice.toFixed(2);
     
+    $("#user-name").text(userName);
+    $(".order-total").text(orderTotal);
+    $("#pizza-list").show()
+    displayPizzaDetails(customerOrder);
+  });
+  $("form#megadeath-pizza").submit(function(event) {
+    event.preventDefault();
+    const pizzaSize = $("select#megadeath-size").val();
+    let megadeathPizza = new Pizza();
+
+    megadeathPizza.addSize(pizzaSize);
+    megadeathPizza.price += 20;
+    customerOrder.addPizza(megadeathPizza);
+
+    $("select#megadeath-size").val("medium");
+
+    let orderTotal = customerOrder.totalPrice.toFixed(2);
+
     $("#user-name").text(userName);
     $(".order-total").text(orderTotal);
     $("#pizza-list").show()
