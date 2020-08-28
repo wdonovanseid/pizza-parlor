@@ -10,7 +10,17 @@ _This is an Epicodus Project in using object oriented JavaScript to create a web
 
 ## Specs
 
+Spec: The program adds size to pizza object
+Input: User clicks large size
+Output: pizza {size: large}
 
+Spec: The program adds toppings to pizza object
+Input: User clicks pepperoni, cheese, and sausage
+Output: pizza {toppings: [pepperoni, cheese, sausage]}
+
+Spec: The program checks size and toppings to find total cost and displays to user
+Input: pizza {size: large , toppings: [pepperoni, cheese, sausage]}
+Output: Total Cost is $24.99
 
 ## Gh-pages Link
 
