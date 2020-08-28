@@ -57,7 +57,12 @@ let customerOrder = new Order();
 // functions
 
 function displayPizzaDetails(orderToDisplay) {
-
+  let pizzasList = $("ul#pizzas");
+  let htmlForPizzaInfo = "";
+  orderToDisplay.pizzas.forEach(function(pizza) {
+    htmlForPizzaInfo += "<li>" + pizza.size + "</li>";
+  });
+  pizzasList.html(htmlForPizzaInfo);
 }
 
 // USER INTERFACE //
