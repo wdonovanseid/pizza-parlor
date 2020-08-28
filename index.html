@@ -15,8 +15,8 @@
     <form id="pizza-order">
       <div class="form-group">
         <div class="card">
-          <label name="user-name">Enter your name here!</label>
-          <input id="user-name" class="form-control" type="text">
+          <label name="input-name">Enter your name here!</label>
+          <input id="input-name" class="form-control" type="text">
         </div>
         <div class="card">
           <label for="ordered-size">Choose a size:</label>
@@ -69,7 +69,7 @@
     <button type="button" class="btn btn-success" id="checkout">Proceed to Checkout</button>
     <hr>
     <div class="card" id="recipt">
-      <p><span id="name"></span>, your orders total cost is $<span class="order-total"></span></p>
+      <p><span id="user-name"></span>, your orders total cost is $<span class="order-total"></span></p>
       <button type="button" class="btn btn-success" id="pickup">Pickup</button>
       <button type="button" class="btn btn-success" id="delivery">Delivery</button>
     </div>
@@ -81,15 +81,15 @@
         <form id="delivery-survey">
           <div class="form-group">
             <div class="card">
-              <label name="address">Enter your address here!</label>
-              <input id="address" class="form-control" type="text">
+              <label name="input-address">Enter your address here!</label>
+              <input id="input-address" class="form-control" type="text">
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </form>
       </div>
       <div class="card" id="delivery-OTW">
-        <p>Your order is on the way!</p>
+        <p>Your order will be sent to <span id="user-address"></span>!</p>
       </div>
     </div>
   </div>

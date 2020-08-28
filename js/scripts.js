@@ -124,6 +124,14 @@ function attachPizzaListeners() {
   $("#checkout").on("click", function() {
     $("#recipt").show();
   });
+  $("#pickup").on("click", function() {
+    $("#pickup-info").show();
+    $("#delivery").hide();
+  });
+  $("#delivery").on("click", function() {
+    $("#delivery-info").show()
+    $("#pickup").hide();
+  });
 }
 
 // USER INTERFACE //
@@ -132,7 +140,7 @@ $(document).ready(function() {
   attachPizzaListeners();
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-    const userName = $("input#user-name").val();
+    const userName = $("input#input-name").val();
     const pizzaSize = $("select#ordered-size").val();
     let thePizza = new Pizza();
 
@@ -145,9 +153,15 @@ $(document).ready(function() {
 
     let orderTotal = customerOrder.totalPrice.toFixed(2);
     
-    $("#name").text(userName);
+    $("#user-name").text(userName);
     $(".order-total").text(orderTotal);
     $("#pizza-list").show()
     displayPizzaDetails(customerOrder);
+  });
+  $("form#delivery-survey").submit(function(event) {
+    event.preventDefault();
+    const userAddress = $("input#input-address").val();
+    $("#user-address").text(userAddress);
+    $("#delivery-OTW").show();
   });
 });
