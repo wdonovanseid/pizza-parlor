@@ -162,6 +162,7 @@ $(document).ready(function() {
     let megadeathPizza = new Pizza();
 
     megadeathPizza.addSize(pizzaSize);
+    megadeathPizza.size = "megadeath " + pizzaSize;
     megadeathPizza.price += 20;
     customerOrder.addPizza(megadeathPizza);
 
