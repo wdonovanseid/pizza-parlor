@@ -91,7 +91,7 @@ function displayPizzaDetails(orderToDisplay) {
   let pizzasList = $("ul#pizzas");
   let htmlForPizzaInfo = "";
   orderToDisplay.pizzas.forEach(function(pizza) {
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size.toUpperCase() + " PIZZA $ " + pizza.price + "</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size.toUpperCase() + " PIZZA $ " + pizza.price.toFixed(2) + "</li>";
   });
   pizzasList.html(htmlForPizzaInfo);
 }
@@ -163,6 +163,7 @@ $(document).ready(function() {
 
     megadeathPizza.addSize(pizzaSize);
     megadeathPizza.size = "megadeath " + pizzaSize;
+    megadeathPizza.toppings = ["MAKE", "THEM", "REGRET"];
     megadeathPizza.price += 20;
     customerOrder.addPizza(megadeathPizza);
 
