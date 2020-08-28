@@ -5,14 +5,42 @@
   <link href="css/styles.css" rel="stylesheet" type="text/css">
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
-  <title></title>
+  <title>Pizza Parlor</title>
 </head>
 <body>
   <div class="jumbotron">
-    <h1></h1>
+    <h1>Pizza Parlor</h1>
   </div>
   <div class="container">
-
+    <form id="pizza-order">
+      <div class="form-group">
+        <div class="card">
+          <label name="userName">Enter your name here!</label>
+          <input id="userName" class="form-control" type="text">
+        </div>
+        <div class="card">
+          <label for="pizzaSize">What size would you like your pizza?</label>
+          <select id="pizzaSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="x-large">Extra Large</option>
+          </select>
+        </div>
+        <div class="card">
+          <p>Please select your toppings:</p>
+          <input type="checkbox" name="topping" value="pepperoni">Pepperoni<br>
+          <input type="checkbox" name="topping" value="pineapple">Pineapple<br>
+          <input type="checkbox" name="topping" value="sausage">Sausage<br>
+          <input type="checkbox" name="topping" value="olives">Olives<br>
+          <input type="checkbox" name="topping" value="anchovy">Anchovy<br>
+          <input type="checkbox" name="topping" value="x-cheese">Extra Cheese<br>
+        </div>
+      </div>
+    </form>
+    <div class="card">
+      <div class="order-total"></div>
+    </div>
   </div>
 </body>
 </html>
