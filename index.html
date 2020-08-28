@@ -19,8 +19,8 @@
           <input id="user-name" class="form-control" type="text">
         </div>
         <div class="card">
-          <label for="pizza-size">Choose a size:</label>
-          <select id="pizza-size">
+          <label for="ordered-size">Choose a size:</label>
+          <select id="ordered-size">
             <option value="small">Small"10 + $10.75</option>
             <option value="medium">Medium"12 + $14.00</option>
             <option value="large">Large"14 + $16.75</option>
@@ -39,9 +39,21 @@
         <button type="submit" class="btn btn-success">Add to Order</button>
       </div>
     </form>
+    <hr>
+    <h2>Pizzas:</h2>
+    <ul id="pizzas">
+    </ul>
+    <div class="col-md-6">
+      <div id="show-pizza">
+        <p>Pizza Size: <span class="pizza-size"></span></p>
+        <p>Pizza Toppings: <span class="pizza-toppings"></span></p>
+        <div id="buttons">
+        </div>
+      </div>
+    </div>
     <div class="card">
       <div id="recipt">
-        <p><span id="name"></span>, your order costs $<span id="order-total"></span></p>
+        <p><span id="name"></span>, your orders total cost is $<span id="order-total"></span></p>
       </div>
     </div>
   </div>

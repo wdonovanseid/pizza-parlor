@@ -47,6 +47,7 @@ function Order() {
 }
 
 Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
   this.pizzas.push(pizza);
   this.totalPrice = this.totalPrice + pizza.price;
 }
@@ -60,7 +61,7 @@ Order.prototype.findPizza = function(id) {
   for (let i=0; i< this.pizzas.length; i++) {
     if (this.pizzas[i]) {
       if (this.pizzas[i].id == id) {
-        return this.pizzas [i];
+        return this.pizzas[i];
       }
     }
   };
@@ -84,7 +85,7 @@ Order.prototype.deletePizza = function(id) {
 
 let customerOrder = new Order();
 
-// functions
+// Display and Listener Functions
 
 function displayPizzaDetails(orderToDisplay) {
   let pizzasList = $("ul#pizzas");
@@ -107,11 +108,14 @@ function showPizza(pizzaId) {
 
 function attachPizzaListeners() {
   $("ul#pizzas").on("click", "li", function() {
+    console.log(this.id)
     showPizza(this.id);
   });
   $("#buttons").on("click", ".deleteButton", function() {
     customerOrder.deletePizza(this.id);
     $("#show-pizza").hide();
+    let orderTotal = customerOrder.totalPrice;
+    $("#order-total").text(orderTotal);
     displayPizzaDetails(customerOrder);
   });
 }
@@ -119,22 +123,24 @@ function attachPizzaListeners() {
 // USER INTERFACE //
 
 $(document).ready(function() {
+  attachPizzaListeners();
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
     const userName = $("input#user-name").val();
-    const pizzaSize = $("select#pizza-size").val();
+    const pizzaSize = $("select#ordered-size").val();
     let thePizza = new Pizza();
 
     thePizza.addSize(pizzaSize);
     thePizza.addToppings();
     customerOrder.addPizza(thePizza);
 
-    $("select#pizza-size").val("");
+    $("select#ordered-size").val("");
     $("input:checkbox").prop("checked", false);
 
     let orderTotal = customerOrder.totalPrice;
     $("#recipt").show();
     $("#name").text(userName);
     $("#order-total").text(orderTotal);
+    displayPizzaDetails(customerOrder);
   });
 });
