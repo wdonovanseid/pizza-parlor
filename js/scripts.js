@@ -2,7 +2,7 @@
 // Pizza Stuff
 
 function Pizza() {
-  this.size = "";
+  this.size = "test";
   this.toppings = [];
   this.totalPrice = 0;
 }
@@ -12,7 +12,7 @@ Pizza.prototype.addSize = function(size) {
   console.log(temp)
   console.log(size)
   console.log(this.size)
-  temp.concat(size);
+  temp.replace("test", size);
   console.log(temp)
   console.log(size)
   console.log(this.size)
