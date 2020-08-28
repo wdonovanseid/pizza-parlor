@@ -11,13 +11,13 @@ Pizza.prototype.addSize = function(size) {
   this.size = size;
   switch(size) {
     case "small":
-      this.totalPrice = 14;
+      this.totalPrice = 10.75;
       break;
     case "medium":
-      this.totalPrice = 16;
+      this.totalPrice = 14;
       break;
     case "large":
-      this.totalPrice = 18;
+      this.totalPrice = 16.75;
       break;
     case "x-large":
       this.totalPrice = 22;
@@ -26,10 +26,14 @@ Pizza.prototype.addSize = function(size) {
 
 Pizza.prototype.addToppings = function() {
   let allToppings = $("form input:checkbox");
+  let totalToppings = 0;
   for (i=0; i<allToppings.length; i++) {
     if (allToppings[i].checked) {
       this.toppings.push(allToppings[i].value);
-      this.totalPrice = this.totalPrice + 2;
+      totalToppings += 1;
+      if (totalToppings > 2) {
+        this.totalPrice = this.totalPrice + 2;
+      }
     }
   }
 }
@@ -51,6 +55,7 @@ $(document).ready(function() {
 
     let orderTotal = thePizza.totalPrice;
     $("#recipt").show();
+    $("#name").text(userName);
     $("#order-total").text(orderTotal);
   });
 });
