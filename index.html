@@ -29,12 +29,24 @@
         </div>
         <div class="card">
           <p>First 2 toppings free, each extra topping $2:</p>
-          <input type="checkbox" name="topping" value="pepperoni">Pepperoni<br>
-          <input type="checkbox" name="topping" value="pineapple">Pineapple<br>
-          <input type="checkbox" name="topping" value="sausage">Sausage<br>
-          <input type="checkbox" name="topping" value="olives">Olives<br>
-          <input type="checkbox" name="topping" value="anchovy">Anchovy<br>
-          <input type="checkbox" name="topping" value="x-cheese">Extra Cheese<br>
+          <div class="checkboxes">
+            <div class="">
+              <label><input type="checkbox" name="topping" value="pepperoni"> Pepperoni</label>
+              <label><input type="checkbox" name="topping" value="pineapple"> Pineapple</label>
+              <label><input type="checkbox" name="topping" value="sausage"> Sausage</label>
+              <label><input type="checkbox" name="topping" value="olives"> Olives</label>
+              <label><input type="checkbox" name="topping" value="anchovy"> Anchovy</label>
+              <label><input type="checkbox" name="topping" value="x-cheese"> Extra Cheese</label>
+            </div>
+            <div class="">
+              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value=""></label>
+              <label><input type="checkbox" name="topping" value=""></label>
+            </div>
+          </div>
         </div>
         <button type="submit" class="btn btn-success">Add to Order</button>
       </div>
@@ -43,17 +55,19 @@
     <h2>Pizzas:</h2>
     <ul id="pizzas">
     </ul>
-    <div class="col-md-6">
+    <div class="card">
       <div id="show-pizza">
         <p>Pizza Size: <span class="pizza-size"></span></p>
         <p>Pizza Toppings: <span class="pizza-toppings"></span></p>
         <div id="buttons">
         </div>
       </div>
+      <p>Total Cost: $<span class="order-total"></span></p>
     </div>
+    <button type="button" class="btn btn-danger" id="checkout">Proceed to Checkout</button>
     <div class="card">
       <div id="recipt">
-        <p><span id="name"></span>, your orders total cost is $<span id="order-total"></span></p>
+        <p><span id="name"></span>, your orders total cost is $<span class="order-total"></span></p>
       </div>
     </div>
   </div>
