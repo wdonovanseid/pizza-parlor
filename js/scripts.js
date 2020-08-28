@@ -8,19 +8,30 @@ function Pizza() {
 }
 
 Pizza.prototype.addSize = function(size) {
-  this.size.concat(size);
+  let temp = this.size;
+  console.log(temp)
+  console.log(size)
+  console.log(this.size)
+  temp.concat(size);
+  console.log(temp)
+  console.log(size)
+  console.log(this.size)
+  this.size = temp;
 }
 
 Pizza.prototype.addToppings = function() {
-  let allToppings = document.forms[0];
+  let allToppings = $("form input:checkbox");
   for (i=0; i<allToppings.length; i++) {
     if (allToppings[i].checked) {
-      this.toppings.push(allToppings[i]);
-      this.totalPrice = this.totalPrice + allToppings[i].val();
+      this.toppings.push(allToppings[i].value);
+      this.totalPrice = this.totalPrice
     }
   }
-  this.toppings.push(topping);
 }
+
+// Global Variables
+
+let thePizza = new Pizza();
 
 // USER INTERFACE //
 
@@ -29,6 +40,8 @@ $(document).ready(function() {
     event.preventDefault();
     const userName = $("input#user-name").val();
     const pizzaSize = $("select#pizza-size").val();
-    let 
+
+    thePizza.addSize(pizzaSize);
+    thePizza.addToppings();
   });
 });
