@@ -98,9 +98,13 @@ function displayPizzaDetails(orderToDisplay) {
 
 function showPizza(pizzaId) {
   const pizza = customerOrder.findPizza(pizzaId);
+  let htmlForPizzaToppings = "";
   $("#show-pizza").show();
   $(".pizza-size").html(pizza.size);
-  $(".pizza-toppings").html(pizza.toppings);
+  pizza.toppings.forEach(function(topping) {
+    htmlForPizzaToppings += topping + ", ";
+  })
+  $(".pizza-toppings").html(htmlForPizzaToppings);
   let buttons = $("#buttons");
   buttons.empty();
   buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete Order</button>");
@@ -113,7 +117,7 @@ function attachPizzaListeners() {
   $("#buttons").on("click", ".deleteButton", function() {
     customerOrder.deletePizza(this.id);
     $("#show-pizza").hide();
-    let orderTotal = customerOrder.totalPrice;
+    let orderTotal = customerOrder.totalPrice.toFixed(2);
     $(".order-total").text(orderTotal);
     displayPizzaDetails(customerOrder);
   });
@@ -139,7 +143,7 @@ $(document).ready(function() {
     $("select#ordered-size").val("small");
     $("input:checkbox").prop("checked", false);
 
-    let orderTotal = customerOrder.totalPrice;
+    let orderTotal = customerOrder.totalPrice.toFixed(2);
     
     $("#name").text(userName);
     $(".order-total").text(orderTotal);
