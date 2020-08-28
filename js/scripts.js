@@ -140,7 +140,6 @@ $(document).ready(function() {
   attachPizzaListeners();
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
-    const userName = $("input#input-name").val();
     const pizzaSize = $("select#ordered-size").val();
     let thePizza = new Pizza();
 
@@ -148,12 +147,11 @@ $(document).ready(function() {
     thePizza.addToppings();
     customerOrder.addPizza(thePizza);
 
-    $("select#ordered-size").val("medium");
+    $("select#ordered-size").val("small");
     $("input:checkbox").prop("checked", false);
 
     let orderTotal = customerOrder.totalPrice.toFixed(2);
     
-    $("#user-name").text(userName);
     $(".order-total").text(orderTotal);
     $("#pizza-list").show()
     displayPizzaDetails(customerOrder);
@@ -167,18 +165,19 @@ $(document).ready(function() {
     megadeathPizza.price += 20;
     customerOrder.addPizza(megadeathPizza);
 
-    $("select#megadeath-size").val("medium");
+    $("select#megadeath-size").val("small");
 
     let orderTotal = customerOrder.totalPrice.toFixed(2);
 
-    $("#user-name").text(userName);
     $(".order-total").text(orderTotal);
     $("#pizza-list").show()
     displayPizzaDetails(customerOrder);
   });
   $("form#delivery-survey").submit(function(event) {
     event.preventDefault();
+    const userName = $("input#input-name").val();
     const userAddress = $("input#input-address").val();
+    $("#user-name").text(userName);
     $("#user-address").text(userAddress);
     $("#delivery-OTW").show();
   });
