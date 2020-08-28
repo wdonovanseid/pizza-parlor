@@ -70,6 +70,27 @@
     <hr>
     <div class="card" id="recipt">
       <p><span id="name"></span>, your orders total cost is $<span class="order-total"></span></p>
+      <button type="button" class="btn btn-success" id="pickup">Pickup</button>
+      <button type="button" class="btn btn-success" id="delivery">Delivery</button>
+    </div>
+    <div class="card" id="pickup-info">
+      <p>Your order will be ready in 15-30 minutes.  Please come to 1234 Not-a-Real-Address to pick up your order!</p>
+    </div>
+    <div id="delivery-info">
+      <div class="card">
+        <form id="delivery-survey">
+          <div class="form-group">
+            <div class="card">
+              <label name="address">Enter your address here!</label>
+              <input id="address" class="form-control" type="text">
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="card" id="delivery-OTW">
+        <p>Your order is on the way!</p>
+      </div>
     </div>
   </div>
 </body>
