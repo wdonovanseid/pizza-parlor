@@ -91,7 +91,7 @@ function displayPizzaDetails(orderToDisplay) {
   let pizzasList = $("ul#pizzas");
   let htmlForPizzaInfo = "";
   orderToDisplay.pizzas.forEach(function(pizza) {
-    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size.toUpperCase() + " PIZZA</li>";
+    htmlForPizzaInfo += "<li id=" + pizza.id + ">" + pizza.size.toUpperCase() + " PIZZA $ " + pizza.price + "</li>";
   });
   pizzasList.html(htmlForPizzaInfo);
 }
@@ -105,16 +105,16 @@ function showPizza(pizzaId) {
     htmlForPizzaToppings += topping + ", ";
   });
   $(".pizza-toppings").html(htmlForPizzaToppings);
-  let buttons = $("#buttons");
+  let buttons = $("#deleteButtons");
   buttons.empty();
-  buttons.append("<button class='deleteButton' id=" + pizza.id + ">Delete Order</button>");
+  buttons.append("<button class='btn btn-primary' id=" + pizza.id + ">Delete Order</button>");
 }
 
 function attachPizzaListeners() {
   $("ul#pizzas").on("click", "li", function() {
     showPizza(this.id);
   });
-  $("#buttons").on("click", ".deleteButton", function() {
+  $("#deleteButtons").on("click", ".btn", function() {
     customerOrder.deletePizza(this.id);
     $("#show-pizza").hide();
     let orderTotal = customerOrder.totalPrice.toFixed(2);
